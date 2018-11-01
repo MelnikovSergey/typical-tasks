@@ -17,12 +17,6 @@ p {
 	margin: auto; 
 }
 
-@import url(reset.css);
-
-body {
-	background-color: lightgrey;
-}
-
 @keyframes borderLight {
   from {border: 2px solid red;}
   to {border: 2px solid blue;}
