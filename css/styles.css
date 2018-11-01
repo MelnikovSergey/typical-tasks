@@ -16,3 +16,25 @@ p {
 	width: 960px;
 	margin: auto; 
 }
+
+@import url(reset.css);
+
+body {
+	background-color: lightgrey;
+}
+
+@keyframes borderLight {
+  from {border: 2px solid red;}
+  to {border: 2px solid blue;}
+}
+.imageBlock img {
+  width: 200px;
+}
+
+.shortBio {
+  padding: 10px;
+}
+
+.animated {
+  animation: borderLight 1s linear infinite alternate;
+}
