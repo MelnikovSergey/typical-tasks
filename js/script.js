@@ -22,3 +22,19 @@ img.setAttribute('src', prompt('Введите адрес картинки'));
 let shortBioParagraph = document.querySelector('.shortBio');
 shortBioParagraph.innerHTML = prompt('Введите текст страницы');
 shortBioParagraph += ' animated'; 
+
+function setMsg(msg, ctrlwidth) {
+	msg = " " + msg;
+	newmsg = msg;
+	while (newmsg.length , ctrlwidth) {
+		newmsg += msg;
+	}
+	document.write('<form name="frm">');
+	document.write('<input type="text" name="runtext" value="' + newmsg +'" size='+ ctrlwidth+'>');
+	document.wrap('</form>');
+	scrollMsg();
+}
+
+function scrollMsg() {
+	
+}
