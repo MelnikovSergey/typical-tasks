@@ -23,6 +23,7 @@ let shortBioParagraph = document.querySelector('.shortBio');
 shortBioParagraph.innerHTML = prompt('Введите текст страницы');
 shortBioParagraph += ' animated'; 
 
+/* test running line (message) */
 function setMsg(msg, ctrlwidth) {
 	msg = " " + msg;
 	newmsg = msg;
@@ -36,5 +37,8 @@ function setMsg(msg, ctrlwidth) {
 }
 
 function scrollMsg() {
-	
+	CurMSg = document.frm.runtext.value;
+	CurMSg = CurMSg.substring(1, CurMSg.length) + CurMSg.substring(0, 1);
+	document.frm.runtext.value = CurMSg;
+	timerID = setTimeout("scrollMsg()", 100);
 }
