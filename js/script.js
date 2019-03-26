@@ -42,3 +42,20 @@ function scrollMsg() {
 	document.frm.runtext.value = CurMSg;
 	timerID = setTimeout("scrollMsg()", 100);
 }
+
+
+function NextImage(){
+	if(oImageLoad == null){
+		var nImage = nCurImage + 1;
+		if(nImage == nImgCount)
+			nImage = 0;
+		ShowImage(nImage);}
+}
+
+function PrevImage(){
+	if(oImageLoad == null){
+		var nImage = nCurImage -1;
+		if(nImage < 0)
+			nImage = nImgCount -1;ShowImage(nImage);
+	}
+}
