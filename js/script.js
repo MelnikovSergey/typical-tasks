@@ -59,3 +59,13 @@ function PrevImage(){
 			nImage = nImgCount -1;ShowImage(nImage);
 	}
 }
+
+var nDevX = 300;
+var nDevY = 300;
+
+for(var i = 0; i < nCount; i++){
+	aoChars[i].m_fX = Math.random() * 2 * nDevX -nDevX;
+	aoChars[i].m_fY = Math.random() * 2 * nDevY -nDevY;
+	aoChars[i].m_fDX = -aoChars[i].m_fX / nDevX;
+	aoChars[i].m_fDY = -aoChars[i].m_fY / nDevY;UpdateSpanPos(i);
+}
