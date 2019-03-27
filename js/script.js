@@ -75,3 +75,22 @@ function UpdateSpanPos(nNumber){
 	aoChars[nNumber].style.top = Math.round(aoChars[nNumber].m_fX).toString(10) + "px";
 	aoChars[nNumber].style.left =Math.round(aoChars[nNumber].m_fY).toString(10) + "px";
 }
+
+function OnTimer(){
+	var bStop = true;
+	for(var i = 0; i < nCount; i++){
+		aoChars[i].m_fX += aoChars[i].m_fDX;
+		aoChars[i].m_fY += aoChars[i].m_fDY;
+		if((Math.abs(aoChars[i].m_fX) < 1) &&(Math.abs(aoChars[i].m_fY) < 1)){
+			aoChars[i].m_fX = 0;
+			aoChars[i].m_fY = 0;
+			aoChars[i].m_fDX = 0;
+			aoChars[i].m_fDY = 0;
+		} else
+			bStop = false;
+		UpdateSpanPos(i);
+	}
+	if(bStop)
+		window.clearInterval(nTimerID);
+}
+		
