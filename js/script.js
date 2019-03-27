@@ -60,6 +60,7 @@ function PrevImage(){
 	}
 }
 
+/*** Test ***/
 var nDevX = 300;
 var nDevY = 300;
 
@@ -68,4 +69,9 @@ for(var i = 0; i < nCount; i++){
 	aoChars[i].m_fY = Math.random() * 2 * nDevY -nDevY;
 	aoChars[i].m_fDX = -aoChars[i].m_fX / nDevX;
 	aoChars[i].m_fDY = -aoChars[i].m_fY / nDevY;UpdateSpanPos(i);
+}
+
+function UpdateSpanPos(nNumber){
+	aoChars[nNumber].style.top = Math.round(aoChars[nNumber].m_fX).toString(10) + "px";
+	aoChars[nNumber].style.left =Math.round(aoChars[nNumber].m_fY).toString(10) + "px";
 }
