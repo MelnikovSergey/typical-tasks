@@ -94,3 +94,9 @@ function OnTimer(){
 		window.clearInterval(nTimerID);
 }
 		
+function OnTimer_1(){
+	fX += fdX;if(fX > 0){
+		fX = 0;clearInterval(nTimerID);
+		InitPhase_2();}elsefdX += 0.75;
+	aoChars[0].style.left = Math.ceil(fX).toString() + "px";
+}
