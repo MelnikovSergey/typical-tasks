@@ -100,3 +100,15 @@ function OnTimer_1(){
 		InitPhase_2();}elsefdX += 0.75;
 	aoChars[0].style.left = Math.ceil(fX).toString() + "px";
 }
+
+function OnTimer(){
+	var dfAlpha = 360 / nCount;
+	for(var i = 0; i < nCount; i++){
+		var oSpan = aoChars[i];
+		var nTop = nYPos + nHeight * Math.sin(fAlpha -i * dfAlpha * Math.PI / 180);
+		oSpan.style.top  = nTop;
+		oSpan.style.left = nXPos + nWidth *Math.cos(fAlpha -i * dfAlpha * Math.PI / 180);
+		oSpan.style.fontSize =((nTop -nYPos + nHeight) / (2 * nHeight)) *(nFontSizeMax -nFontSizeMin) + nFontSizeMin;
+	}
+	fAlpha += 0.02;
+}
