@@ -112,3 +112,9 @@ function OnTimer(){
 	}
 	fAlpha += 0.02;
 }
+
+var nStarCount  = 128;
+nMinSpeed  = 1;  
+nMaxSpeed  = 5; 
+nMinSize  = 1;
+nMaxSize  = 3;
