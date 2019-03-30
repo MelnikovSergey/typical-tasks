@@ -148,3 +148,13 @@ function UpdateStarPos(i){
 	oDiv.style.top  = oDiv.y.toString() + "px";
 	oDiv.style.left = oDiv.x.toString() + "px";
 }
+
+function MoveStars(){
+	for(var i = 0; i < nStarCount; i++){
+		aStars[i].x += aStars[i].nSpeed;
+		if(aStars[i].x > nWidth)
+			ResetStar(i, 0);
+		else
+			UpdateStarPos(i);
+	}
+}
