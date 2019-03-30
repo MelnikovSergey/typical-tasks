@@ -122,3 +122,23 @@ nMaxSize  = 3;
 var aStars  = new Array(nStarCount);
 var nWidth  = screen.width;
 var nHeight = screen.height;
+
+function ResetStar(i, x){
+	var oDiv = aStars[i];
+		if(x < 0)x = Math.round(Math.random() * nWidth);
+			oDiv.x = x;
+			oDiv.y = Math.round(Math.random() * nHeight);
+			oDiv.nSpeed = Math.round(Math.random() * (nMaxSpeed -nMinSpeed)) + nMinSpeed;
+	
+			oDiv.style.backgroundColor = 
+				RGB_Str(Math.round(Math.random() * 0xFF),
+					Math.round(Math.random() * 0xFF),
+					Math.round(Math.random() * 0xFF));
+
+			var nSize = Math.round(Math.random() * (nMaxSize -nMinSize)) + nMinSize;
+			
+			oDiv.style.width = nSize.toString(10) + "px";
+			oDiv.style.height = oDiv.style.width;
+
+		UpdateStarPos(i);
+}
