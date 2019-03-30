@@ -35,7 +35,7 @@ function setMsg(msg, ctrlwidth) {
 	document.wrap('</form>');
 	scrollMsg();
 }
-
+/* home work 4.2 */
 function scrollMsg() {
 	CurMSg = document.frm.runtext.value;
 	CurMSg = CurMSg.substring(1, CurMSg.length) + CurMSg.substring(0, 1);
@@ -43,7 +43,7 @@ function scrollMsg() {
 	timerID = setTimeout("scrollMsg()", 100);
 }
 
-
+/* home work 4.7 */
 function NextImage(){
 	if(oImageLoad == null){
 		var nImage = nCurImage + 1;
@@ -60,7 +60,7 @@ function PrevImage(){
 	}
 }
 
-/*** Test ***/
+/* home work 3.7 */
 var nDevX = 300;
 var nDevY = 300;
 
@@ -113,6 +113,7 @@ function OnTimer(){
 	fAlpha += 0.02;
 }
 
+/* home work 3.9 */
 var nStarCount  = 128;
 nMinSpeed  = 1;  
 nMaxSpeed  = 5; 
