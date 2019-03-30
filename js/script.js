@@ -142,3 +142,9 @@ function ResetStar(i, x){
 
 		UpdateStarPos(i);
 }
+
+function UpdateStarPos(i){
+	var oDiv = aStars[i];
+	oDiv.style.top  = oDiv.y.toString() + "px";
+	oDiv.style.left = oDiv.x.toString() + "px";
+}
