@@ -118,3 +118,7 @@ nMinSpeed  = 1;
 nMaxSpeed  = 5; 
 nMinSize  = 1;
 nMaxSize  = 3;
+
+var aStars  = new Array(nStarCount);
+var nWidth  = screen.width;
+var nHeight = screen.height;
