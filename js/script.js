@@ -159,3 +159,12 @@ function MoveStars(){
 			UpdateStarPos(i);
 	}
 }
+
+/* home work 3.6 */
+var oContainer = document.createTextNode("");
+document.getElementById("animate_elem").appendChild(oContainer);
+function OnTimer(){
+	oContainer.nodeValue = strSample.substring(nPos,nPos + nLen);
+	if(++nPos > (strSample.length -nLen))
+		nPos = 0;
+}
