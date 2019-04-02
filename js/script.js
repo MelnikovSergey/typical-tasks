@@ -168,3 +168,18 @@ function OnTimer(){
 	if(++nPos > (strSample.length -nLen))
 		nPos = 0;
 }
+
+/* home work 3.6.1 */
+var oText = document.getElementById("animate_elem_id");
+var oContainer = document.getElementById("animate_elem_id");
+
+var nWidth = oText.offsetWidth;
+var nPos = oContainer.offsetWidth;
+function OnTimer(){
+	oText.style.left = nPos.toString() + "px";
+	
+	if(--nPos < -nWidth)
+		nPos = oContainer.offsetWidth;
+}
+OnTimer();
+window.setInterval(OnTimer, 20);
