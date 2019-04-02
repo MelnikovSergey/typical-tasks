@@ -162,7 +162,7 @@ function MoveStars(){
 
 /* home work 3.6 */
 var oContainer = document.createTextNode("");
-document.getElementById("animate_elem").appendChild(oContainer);
+document.getElementById("animateElem").appendChild(oContainer);
 function OnTimer(){
 	oContainer.nodeValue = strSample.substring(nPos,nPos + nLen);
 	if(++nPos > (strSample.length -nLen))
@@ -170,8 +170,8 @@ function OnTimer(){
 }
 
 /* home work 3.6.1 */
-var oText = document.getElementById("animate_elem_id");
-var oContainer = document.getElementById("animate_elem_id");
+var oText = document.getElementById("animateElemId");
+var oContainer = document.getElementById("animateElemId");
 
 var nWidth = oText.offsetWidth;
 var nPos = oContainer.offsetWidth;
