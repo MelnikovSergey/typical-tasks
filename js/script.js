@@ -11,17 +11,17 @@
 //document.body.innerHTML = String(result >= 0);
 
 /* home work 3.9 */
-document.body.style.backgroundColor = prompt('Какой будет фон у страницы?');
-let page = document.querySelector('.page');
-let pageColor = prompt('Какой будет цвет текста на странице?');
-page.style.color = pageColor;
-let name = document.querySelector('.name');
-name.innerHTML = prompt('Как зовут человека, который вас вдохновляет?');
-let img = document.querySelector('img');
-img.setAttribute('src', prompt('Введите адрес картинки'));
-let shortBioParagraph = document.querySelector('.shortBio');
-shortBioParagraph.innerHTML = prompt('Введите текст страницы');
-shortBioParagraph += ' animated'; 
+// document.body.style.backgroundColor = prompt('Какой будет фон у страницы?');
+// let page = document.querySelector('.page');
+// let pageColor = prompt('Какой будет цвет текста на странице?');
+// page.style.color = pageColor;
+// let name = document.querySelector('.name');
+// name.innerHTML = prompt('Как зовут человека, который вас вдохновляет?');
+// let img = document.querySelector('img');
+// img.setAttribute('src', prompt('Введите адрес картинки'));
+// let shortBioParagraph = document.querySelector('.shortBio');
+// shortBioParagraph.innerHTML = prompt('Введите текст страницы');
+// shortBioParagraph += ' animated'; 
 
 /* test running line (message) */
 function setMsg(msg, ctrlwidth) {
