@@ -1,6 +1,6 @@
 <?php
 
-# https://api.telegram.org/botÒÎÊÅÍ/setwebhook?url=URL
+# https://api.telegram.org/botТОКЕН/setwebhook?url=URL
 # https://www.domain.ru/project/telegram_bot/index.php
 
 
