@@ -1,24 +1,24 @@
 <?php
 
-# https://api.telegram.org/botТОКЕН/setwebhook?url=URL
+# https://api.telegram.org/botГ’ГЋГЉГ…ГЌ/setwebhook?url=URL
 # https://www.domain.ru/project/telegram_bot/index.php
 
 
-# Принимаем запрос
+# РџСЂРёРЅРёРјР°РµРј Р·Р°РїСЂРѕСЃ
 $data = json_decode(file_get_contents('php://input'), TRUE);
 file_put_contents(__DIR__ . 'logs.txt', '$data: ' . print_r($data, 1)."\n", FILE_APPEND);
 
-# Токен
+# РўРѕРєРµРЅ
 $token = '...';
 
-# Обрабатываем команды
+# РћР±СЂР°Р±Р°С‚С‹РІР°РµРј РєРѕРјР°РЅРґС‹
 $message = $data['message']['text'];
 
-# Формируем массив для отправки в Телеграм
+# Р¤РѕСЂРјРёСЂСѓРµРј РјР°СЃСЃРёРІ РґР»СЏ РѕС‚РїСЂР°РІРєРё РІ РўРµР»РµРіСЂР°Рј
 $params = [
 	'chat_id' => $data['message']['chat']['id'],
 	'text' => $message
 ];
 
-# Отправляем запрос в Телеграм
+# РћС‚РїСЂР°РІР»СЏРµРј Р·Р°РїСЂРѕСЃ РІ РўРµР»РµРіСЂР°Рј
 file_get_contents('https://api.telegram.org/bot'.$token.'/sendMessage?'.http_build_query($params));
