@@ -1,0 +1,155 @@
+﻿/* -------------------------------- 
+
+Общие стили 
+
+-------------------------------- */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.clearfix {
+    zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+.container {
+	max-width: 1120px;
+	margin: 0 auto;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.img-responsive {
+	max-width: 100%;
+	height: auto;
+}
+
+body {
+	font-family: "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.4;
+	min-width: 320px;
+}
+
+
+
+/* -------------------------------- 
+
+Типографика 
+
+-------------------------------- */
+
+h1, p {
+	color: #545454;	
+	margin-bottom: 15px;
+}
+
+h2 {
+	color: #545454;	
+	font-size: 21px;
+	font-weight: 500;
+	margin-bottom: 6px;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	color: #545454;
+	list-style-type: none; 	
+}
+
+p {
+	line-height: 1.4;
+}
+
+a {
+	color: #4682b4;	
+}
+
+b {
+	color: #545454;
+	font-weight: 600;
+}
+
+strong {
+	color: #545454;
+	font-weight: 600;
+}
+
+@media screen and (max-width: 340px) {
+  h1, h2 {
+    line-height: 1.32;
+  }
+}
+
+
+
+/* -------------------------------- 
+
+Карточка товара 
+
+-------------------------------- */
+
+.product {
+	width: 300px;
+	display: inline-block;
+	margin: 25px 5px 5px 50px;
+}
+
+.product-image {
+	margin-bottom: 10px;
+}
+
+.product-image img {
+	width: 300px;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.product-rating li {
+	display: inline-block;
+	color: #ffc107;
+}
+
+.cart-section {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.price {
+	font-weight: 600;
+}
+
+.add-to-cart {
+	border: none;
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #eee;
+	color: #545454;
+	border-radius: 10px;
+}
