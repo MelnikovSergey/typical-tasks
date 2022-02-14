@@ -4,6 +4,11 @@
 
 -------------------------------- */
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -122,18 +127,35 @@ strong {
 }
 
 .navbar-logo {
+	color: #545454;
 	font-size: 24px;
 	font-weight: 700;
+	text-decoration: none;
+	transition: all .2s ease-in-out;
+}
+
+.navbar-logo:hover {
+	color: turquoise;
 }
 
 .navbar-menu li {
 	display: inline-block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-left: .5em;
+	margin-right: .5em;
 }
 
 .navbar-menu li a {
 	display: inline-block;
 	font-size: 16px;
 	font-weight: 200;
+	opacity: .6;
+	transition: all .2s ease-in-out;
+}
+
+.navbar-menu li a:hover {
+	opacity: 1;
 }
 
 .navbar-wrap {
@@ -142,5 +164,18 @@ strong {
 }
 
 .donates {
-	margin-left: 2em;
+	margin-left: 2.5em;
+	background-color: turquoise;
+	border-radius: 100px;
+	padding: 10px 35px;
+	color: #fff;
+	text-decoration: none;
+	box-shadow: 0 4px 6px rgba(64, 224, 208, .2);
+	transition: all .12s ease-in-out;
+}
+
+.donates:hover {
+	font-weight: 700;
+	transform: scale(1.05);
+	box-shadow: 0 8px 10px rgba(64, 224, 208, .5);
 }
