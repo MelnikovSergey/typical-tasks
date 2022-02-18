@@ -1,0 +1,149 @@
+/* -------------------------------- 
+
+Общие стили 
+
+-------------------------------- */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.clearfix {
+    zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+.container {
+	max-width: 1120px;
+	margin: 0 auto;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.img-responsive {
+	max-width: 100%;
+	height: auto;
+}
+
+body {
+	font-family: "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.4;
+	min-width: 320px;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+/* -------------------------------- 
+
+Типографика 
+
+-------------------------------- */
+
+h1, p {
+	color: #545454;	
+	margin-bottom: 15px;
+}
+
+h2 {
+	color: #545454;	
+	font-size: 21px;
+	font-weight: 500;
+	margin-bottom: 6px;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	color: #545454;
+	list-style-type: none; 	
+}
+
+p {
+	line-height: 1.4;
+}
+
+a {
+	color: #4682b4;	
+}
+
+b {
+	color: #545454;
+	font-weight: 600;
+}
+
+strong {
+	color: #545454;
+	font-weight: 600;
+}
+
+@media screen and (max-width: 340px) {
+  h1, h2 {
+    line-height: 1.32;
+  }
+}
+
+
+
+/* -------------------------------- 
+
+Блок (<span>) с подсказкой 
+
+-------------------------------- */
+
+.title {
+	color: #545454;	
+	padding: 5px 10px;
+	border: 1px dashed #545454;
+	border-radius: 10px;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.title::before {
+	content: attr(data-title);
+	position: absolute;
+	left: 50%;
+	bottom: 100%;
+	transform: translateX(-50%);
+	padding: 5px 10px;
+	border: 1px dashed #545454;
+	width: 250px;
+	visibility: hidden;
+	opacity: 0;
+	z-index: -1;
+}
+
+.title:hover::before {
+	visibility: visible;
+	opacity: 1;
+	z-index: 1;
+	bottom: calc(100% + 12px);
+}
