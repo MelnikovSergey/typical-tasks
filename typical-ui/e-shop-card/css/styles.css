@@ -109,9 +109,12 @@ strong {
 -------------------------------- */
 
 .product {
-	width: 300px;
-	display: inline-block;
-	margin: 25px 5px 5px 50px;
+	width: 280px;
+	padding: 20px;
+	padding-top: 8px;
+	border: 1px solid #d9d9d8;
+	border-radius: 10px;
+	background-color: #fff;
 }
 
 .product-image {
