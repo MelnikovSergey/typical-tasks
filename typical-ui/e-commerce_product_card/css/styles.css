@@ -34,11 +34,12 @@ body {
 
 .card {
 	width: 245px;
-	height: 350px;
+	height: 442px;
 	margin-right: 15px;
 	background-color: #fff;
 	border-radius: 5px;
 	overflow: hidden;
+	position: relative;
 }
 
 .card-image {
@@ -49,20 +50,31 @@ body {
 	padding: 4px 8px;
 }
 
-.card-title,
-.card-reviews {
-	font-size: 14px;
+.card-title {
+	font-size: 16px;
+	font-weight: 700;
 }
 
-.card-title a,
-.card-reviews a {
+.card-title a {
 	color: #121212;
 	text-decoration: none;
 }
 
-.card-title a:hover,
-.card-reviews a:hover {
+.card-title a:hover {
 	color: #4ea8ce;
+}
+
+.card-reviews {
+	font-size: 14px;
+}
+
+.card-reviews a {
+	color: #4ea8ce;
+	text-decoration: none;
+}
+
+.card-reviews a:hover {
+	color: #a1be7b;
 }
 
 .card-sale::before {
@@ -124,4 +136,45 @@ body {
 	font-weight: bold;
 	color: #fff;
 	border-radius: 3px;
+}
+
+.card-rating {
+	font-size: 12px;
+	margin: 6px 0 2px 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.card-star {
+	color: #ff5757;
+}
+
+.card-sales {
+	color: #a2a3a4;
+}
+
+.card-liked {
+	font-size: 25px;
+	position: absolute;
+	right: 20px;
+	top: 200px;
+	opacity: 0;
+	transition: opacity .5s ease-in;
+}
+
+.card-liked a {
+	color: #fff;
+	font-size: 25px;
+}
+
+.card-liked a:hover {
+	color: #ff5757;
+}
+
+.card:hover .card-liked {
+	opacity: 1;
+}
+
+.card:hover {
+	box-shadow: 0 0 5px #dfdfde;
 }
