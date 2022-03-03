@@ -191,6 +191,10 @@ strong {
 	background-color: #c4c4c4;
 }
 
+.image-dots__item--active {
+	background-color: #fff;
+}
+
 .product__title {
 	font-size: 18px;
 	line-height: 1.2;
