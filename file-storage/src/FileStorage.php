@@ -14,20 +14,24 @@ class FileStorage
 
 	public function set($key, $value, $time_to_life = 0) {
 		$path = $this->getFileLocation($key);
-		# var_dump($path);
 
 		if(!file_exists($path)) {
 			touch($path);
 		}
 
-		file_put_contents($path, $value);
+		$resource = fopen($path, 'w');
+		fwrite($resource, $value);
+		fclose($resource);
 	}
 
 	public function get($key) {
 		$path = $this->getFileLocation($key);
 
 		if($this->has($key)) {
-			$value = file_get_contents($path);
+
+			$resource = fopen($path, 'r');
+			$value = fread($resource, filesize($path));
+			fclose($resource);
 
 			return $value;
 		} else {
