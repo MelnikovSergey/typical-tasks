@@ -9,7 +9,7 @@ class FileStorage
 	}
 
 	private function getFileLocation($key) {
-		return $this->store . DIRECTORY_SEPARATOR . $key;
+		return $this->store . DIRECTORY_SEPARATOR . md5($key);
 	}
 
 	public function set($key, $value, $time_to_life = 0) {
