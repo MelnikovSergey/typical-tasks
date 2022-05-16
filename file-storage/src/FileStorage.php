@@ -9,7 +9,16 @@ class FileStorage
 	}
 
 	private function getFileLocation($key) {
-		return $this->store . DIRECTORY_SEPARATOR . md5($key);
+		$key = md5($key);
+
+		$level_1 = $this->store . DIRECTORY_SEPARATOR . substr($key, 0, 2);
+		$level_2 = $level_1 . DIRECTORY_SEPARATOR . substr($key, 2, 2);
+
+		if(!file_exists($level_2)) {
+			mkdir($level_2, 0755, true);
+		}
+
+		return $level_2 . DIRECTORY_SEPARATOR . $key;
 	}
 
 	public function set($key, $value, $time_to_life = 0) {
