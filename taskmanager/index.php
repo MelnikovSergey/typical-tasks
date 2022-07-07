@@ -1,7 +1,14 @@
 <?php
 
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Http\Message\ResponseInterface as Response;
-
 require __DIR__ . '/vendor/autoload.php';
 
+
+$DB = new app\Models\DB();
+
+try {
+	$DB->connect();
+} 
+
+catch(Exception $e) {
+	echo $e->getMessage();
+}

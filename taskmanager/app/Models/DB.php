@@ -11,7 +11,6 @@ class DB {
 	];
 
 	private $db_connections;
-	private $db_ping = $this->db_settings instanceof \mysqli && $this->db_connections->ping();
 
 	public function __construct($db_settings = null) {
 		if(!is_null($db_settings)) {
@@ -19,9 +18,10 @@ class DB {
 		}
 	}
 
-	private function connect($db_connections = null) {
+	public function connect($db_connections = null) {
 
-		if($db_ping) return true;
+		if($this->db_connections instanceof \mysqli && $this->db_connections->ping()) 
+			return true;
 
 		$result = new \mysqli($this->db_settings['host'], 
 				      $this->db_settings['user_name'],
@@ -36,7 +36,8 @@ class DB {
 
 	private function disconnect($db_connections = null) {
 
-		if($db_ping) $this->db_connections->close();
+		if($this->db_connections instanceof \mysqli && $this->db_connections->ping()) 
+			$this->db_connections->close();
 	}
 
 	# INSERT
