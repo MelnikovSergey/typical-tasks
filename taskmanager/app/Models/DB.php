@@ -18,7 +18,7 @@ class DB {
 		}
 	}
 
-	public function connect($db_connections = null) {
+	private function connect($db_connections = null) {
 
 		if($this->db_connections instanceof \mysqli && $this->db_connections->ping()) 
 			return true;
@@ -40,10 +40,24 @@ class DB {
 			$this->db_connections->close();
 	}
 
-	# INSERT
+	public function insert($select_table, $select_values, $disconnect = false) {
+
+		$this->connect();
+
+		$cols = array_keys($select_values);
+
+		$sql_query = "INSERT INTO " . $select_table . " (" . implode(",", $cols) . ") VALUES ('" . implode("','", $select_values) . "')";
+
+		$query_result = $this->db_connections->query($sql_query);
+
+		if(!$query_result) throw new \Exception($this->db_connections->error);
+
+		if($disconnect) $this->disconnect;
+
+		return $this;
+	}
 
 	# UPDATE
 
 	# DELETE
 }
-
