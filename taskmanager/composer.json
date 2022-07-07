@@ -1,0 +1,16 @@
+{
+    "name": "sergey/taskmanager",
+    "description": "Draft",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MelnikovSergey",
+            "email": "sergeyandmelnikov@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": { "app\\": "app/" }
+    }
+	
+}
