@@ -11,6 +11,7 @@ class DB {
 	];
 
 	private $db_connections;
+	private $db_ping = $this->db_settings instanceof \mysqli && $this->db_connections->ping();
 
 	public function __construct($db_settings = null) {
 		if(!is_null($db_settings)) {
@@ -18,8 +19,7 @@ class DB {
 		}
 	}
 
-	private function connections($db_connections = null) {
-		$db_ping = $this->db_settings instanceof \mysqli && $this->db_connections->ping();
+	private function connect($db_connections = null) {
 
 		if($db_ping) return true;
 
@@ -29,7 +29,20 @@ class DB {
 				      $this->db_settings['database']   			
 				     );
 
-		if($result::$errno) throw new \Exception($result::$errno);	
+		if($result::$errno) throw new \Exception($result::$errno);
+
+		$this->db_settings = $result;
 	}
+
+	private function disconnect($db_connections = null) {
+
+		if($db_ping) $this->db_connections->close();
+	}
+
+	# INSERT
+
+	# UPDATE
+
+	# DELETE
 }
 
