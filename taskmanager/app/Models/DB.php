@@ -116,6 +116,12 @@ class DB {
 		return $this;
 	}
 
+	/**
+	 * @param $sql_query - SQL запрос
+	 * @param bool|false $disconnect - закрыть создинение с БД (опционально)
+	 * @return bool
+	 * @throws \Exception	
+	 */
 	public function get_row($sql_query, $disconnect = false) {
 
 		$this->connect();
@@ -127,6 +133,38 @@ class DB {
 		if($query_result->num_rows > 0) {
 
 			$result = $query_result->fetch_assoc();
+
+			if($disconnect) $this->disconnect;
+
+			return $result;
+		}
+		
+		else {
+			
+			if($disconnect) $this->disconnect;
+
+			return false;
+		}
+
+	}
+
+	/**
+	 * @param $sql_query - SQL запрос
+	 * @param bool|false $disconnect - закрыть создинение с БД (опционально)
+	 * @return bool
+	 * @throws \Exception	
+	 */
+	public function get_rows($sql_query, $disconnect = false) {
+
+		$this->connect();
+
+		$query_result = $this->db_connections->query($sql_query);
+
+		if(!$query_result) throw new \Exception($this->db_connections->error);
+
+		if($query_result->num_rows > 0) {
+
+			$result = $query_result->fetch_all(MYSQLI_ASSOC);
 
 			if($disconnect) $this->disconnect;
 
