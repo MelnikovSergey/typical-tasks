@@ -40,6 +40,13 @@ class DB {
 			$this->db_connections->close();
 	}
 
+	/**
+	 * @param $select_table - выбрать нужную таблицу
+	 * @param $select_values - данные для записи (в виде массива)  
+	 * @param bool|false $disconnect - закрыть создинение с БД (опционально)
+	 * @return $this
+	 * @throws \Exception	
+	 */
 	public function insert($select_table, $select_values, $disconnect = false) {
 
 		$this->connect();
@@ -57,7 +64,36 @@ class DB {
 		return $this;
 	}
 
-	# UPDATE
+	/**
+	 * @param $select_table - выбрать нужную таблицу
+	 * @param $select_values - данные для записи (в виде массива) 
+	 * @param $select_conditions - указать условия (where)
+	 * @param bool|false $disconnect - закрыть создинение с БД (опционально)
+	 * @return $this
+	 * @throws \Exception	
+	 */
+	public function update($select_table, $select_values, $select_conditions, $disconnect = false) {
 
-	# DELETE
+		$this->connect();
+
+		$sql_data = [];
+
+		foreach ($select_values as $key => $value) {
+			$sql_data[] = $key . "='" . $value . "'";
+			  
+		}
+
+		$sql_query = "UPDATE " . $select_table . " SET " . implode(",", $sql_data) . " WHERE " . $select_conditions . ";
+
+		$query_result = $this->db_connections->query($sql_query);
+
+		if(!$query_result) throw new \Exception($this->db_connections->error);
+
+		if($disconnect) $this->disconnect;
+
+		return $this;
+	}
+
+	// DELETE
+
 }
