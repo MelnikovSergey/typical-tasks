@@ -115,4 +115,30 @@ class DB {
 
 		return $this;
 	}
+
+	public function get_row($sql_query, $disconnect = false) {
+
+		$this->connect();
+
+		$query_result = $this->db_connections->query($sql_query);
+
+		if(!$query_result) throw new \Exception($this->db_connections->error);
+
+		if($query_result->num_rows > 0) {
+
+			$result = $query_result->fetch_assoc();
+
+			if($disconnect) $this->disconnect;
+
+			return $result;
+		}
+		
+		else {
+			
+			if($disconnect) $this->disconnect;
+
+			return false;
+		}
+
+	}
 }
