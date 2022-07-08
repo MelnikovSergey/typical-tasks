@@ -94,6 +94,25 @@ class DB {
 		return $this;
 	}
 
-	// DELETE
+	/**
+	 * @param $select_table - выбрать нужную таблицу
+	 * @param $select_conditions - указать условия (where)
+	 * @param bool|false $disconnect - закрыть создинение с БД (опционально)
+	 * @return $this
+	 * @throws \Exception	
+	 */
+	public function delete($select_table, $select_conditions, $disconnect = false) {
 
+		$this->connect();
+
+		$sql_query = "DELETE FROM " . $select_table . " WHERE " . $select_conditions . ";
+
+		$query_result = $this->db_connections->query($sql_query);
+
+		if(!$query_result) throw new \Exception($this->db_connections->error);
+
+		if($disconnect) $this->disconnect;
+
+		return $this;
+	}
 }
