@@ -1,0 +1,199 @@
+body {
+	background-color: #222;
+}
+
+.logo {
+	height: 80px;
+	margin: 20px 3%;
+	color: white;
+	font-family: "Verdana";
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.wrapper {
+	position: absolute;
+	top: 80px;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 94%;
+	margin: 20px 3%;
+	font-family: "Verdana";
+}
+
+nav {
+	background-color: #333;
+	height: 50px;
+	width: 100%;
+	min-width: 200px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+nav a {
+	flex: 1;
+	width: 50px;
+	padding: 15px;
+	text-decoration: none;
+	text-align: center;
+	color: #fff;
+	border-top: solid 2px;
+	font-family: "Courier";
+}
+
+.links {
+	flex-wrap: wrap;
+}
+
+.links, .search-bar {
+	height: 100%;
+	min-width: 100px;
+	display: flex;
+	flex: 1;
+}
+
+.search-bar {
+	justify-content: flex-end;
+	align-items: center;
+	padding: 0 5px;
+	border-top: solid 2px #aaa;
+}
+
+.search-bar:before {
+	content: "?";
+	color: #fff;
+	font-family: FontAwesome;
+	font-size: 20px;
+	transform: rotate(90deg);
+	position: relative;
+	left: 10px;
+}
+
+.tasks {
+	border-color: #ac3931;
+}
+
+.tasks:hover, .tasks:focus {
+	background-color: #ac3931;
+}
+
+.projects {
+	border-color: #f6Ae2d;
+}
+
+.projects:hover, .projects:focus {
+	background-color: #f6Ae2d;
+}
+
+.settings {
+	border-color: #3b910d;
+}
+
+.settings:hover, .settings:focus {
+	background-color: #3b910d;
+}
+
+.about {
+	border-color: #2868b7;
+}
+
+.about:hover, .about:focus {
+	background-color: #2868b7;
+}
+
+input {
+	flex: 1;
+	margin: 0 15px 0 25px;
+	padding: 5px;
+	min-width: 100px;
+	border: none;
+	font-size: 100%;
+	font-family: "Courier";
+}
+
+.content {
+	position: absolute;
+	width: 100%;
+	background-color: #ddd;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 30px;
+}
+
+.task {
+	background-color: #fff;
+	box-shadow: 0 0 5px 3px #ccc;
+	margin: 30px 30px 0 30px;
+	padding: 20px;
+	line-height: 1.3;
+}
+
+.task a {
+	display: inline-block;
+	margin: 10px 5px 0 0;
+	color: #2868B7;
+	text-decoration: none;
+}
+
+.task a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+.title {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.title:hover {
+	cursor: pointer;
+	color: #2868b7;
+}
+
+.snippet {
+	margin-top: 5px;
+	font-size: 15px;
+}
+
+@media (max-width: 650px) {
+	nav {
+		flex-direction: column;
+		height: 100px;
+	}
+
+	.task {
+		margin: 15px 15px 0 15px;
+	}
+}
+
+@media (max-width: 350px) {
+	.logo {
+		text-align: center;
+	}
+
+	nav {
+		flex-direction: column;
+		height: 300px;
+	}
+
+	.links {
+		flex-direction: column;
+		flex: 4;
+	}
+
+	.links a {
+		width: 100%;
+	}
+
+	.search-bar {
+		flex: 1;
+	}
+
+	.task {
+		margin: 0px;
+		border: solid 1px #ccc;
+		box-shadow: none;
+	}
+}
