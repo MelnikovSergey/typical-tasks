@@ -1,0 +1,220 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	min-height: 100%;
+}
+
+body {
+	background-color: #929292;
+	padding-bottom: 1.5em;
+}
+
+header {
+	background-color: #292929;
+	background-image: -webkit-linear-gradient(hsla(0,0%,0%,.1), transparent);
+	box-shadow: inset 0 -10px 30px -10px hsla(0,0%,0%,.5),
+			  0 1px 0 hsla(0,0%,100%,.1);
+	height: 3em;
+	margin-bottom: 3em;
+}
+
+header div {
+	margin: 0 auto;
+	width: 18em;
+}
+
+header a {
+	background: transparent;
+	box-shadow: none;
+	color: #888;
+	display: inline;
+	font: 1em/3 sans-serif;
+	position: relative;
+	top: 0;
+	text-shadow: 0 2px 2px #000;
+}
+
+header a:hover,
+header a:focus {
+	color: #ddd;
+}
+
+header a:active {
+	box-shadow: none;
+	top: 1px;
+	-webkit-transition: 0;
+}
+
+h1 {
+	color: hsla(0,0%,0%,.4);
+	font: bold 3em/1 sans-serif;
+	margin-bottom: .5em;
+	text-align: center;
+	text-shadow: 0 1px 2px hsla(0,0%,100%,.2), 0 0 0 #000;
+}
+
+.content {
+	display: table;
+	height: 100%;
+	margin: 0 auto;
+	width: 80%;
+}
+
+ul {
+	display: table-cell;
+	list-style: none;
+	text-align: center;
+	vertical-align: middle;
+}
+
+li {
+	background-color: #f6f6f5;
+	background-image: -webkit-radial-gradient(circle, transparent, hsla(0,0%,0%,.25));
+	background-position: 50% 0%;
+	background-size: 200% 200%;
+	border-radius: .5em .5em 0 0;
+	box-shadow: inset 0 1px 0 #fff,
+			  0 1px 0 1px hsla(0,0%,0%,.25),
+			  0 3px 7px hsla(0,0%,0%,.5);
+	color: #333;
+	display: inline-block;
+	font: bold 1em/1.5 sans-serif;
+	margin: 1.5em 1.5em 5em;
+	padding-top: 1.5em;
+	position: relative;
+	vertical-align: bottom;
+	width: 18em;
+	-webkit-filter: drop-shadow(0 2px 3px hsla(0,0%,0%,.25));
+}
+
+p {
+	margin-bottom: 1.5em;
+	padding: 0 1.5em;
+	text-shadow: 0 1px 1px #fff;
+}
+
+a {
+	background-color: #f6f6f5;
+	background-image: -webkit-radial-gradient(circle, transparent, hsla(0,0%,0%,.15)),
+			  -webkit-linear-gradient(hsla(0,0%,0%,.15), hsla(0,0%,0%,.025) 45%, transparent 50%);
+	background-position: 50% 100%, 0 100%;
+	background-size: 100% 200%, 100% 200%;
+	border-radius: 0 0 .25em .25em;
+	box-shadow: inset 0 1px 0 hsla(0,0%,100%,1),
+			  0 0 0 1px hsla(0,0%,0%,.25),
+			  0 6px 10px hsla(0,0%,0%,.5);
+	color: #888;
+	display: block;
+
+	line-height: 1.5;
+	padding: 1em 0;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	text-decoration: none;
+	text-shadow: 0 1px 1px hsla(0,0%,100%,.4);
+	-webkit-transform: perspective(500) rotateX(0deg);
+	-webkit-transform-origin: 50% 0;
+	-webkit-transition: .1s;
+}
+
+li:hover a {
+	color: #555;
+}
+
+a:active {
+	background-position:50% 100%, 0 0;
+	box-shadow: inset 0 1px 0 hsla(0,0%,100%,.5),
+			  0 0 0 1px hsla(0,0%,0%,.25),
+			  0 2px 3px hsla(0,0%,0%,.75);
+	color: #555;
+	-webkit-transform: perspective(500) rotateX(-10deg);
+}
+
+.icon {
+	background-image: -webkit-linear-gradient(transparent 50%, #6cf 50%);
+	background-position: 50% 0;
+	background-size: 200% 200%;
+	display: block;
+	height: 1.5em;
+	font-style: normal;
+	margin: 0 1.5em 1.5em;
+	position: relative;
+	-webkit-transition: .25s;
+}
+
+li:hover .icon {
+	background-position: 50% 100%;
+}
+
+.icon:after {
+	background-color: hsla(0,0%,0%,.15);
+	box-shadow: 0 1px 1px hsla(0,0%,100%,.6),
+		    0 -1px 1px hsla(0,0%,0%,.1),
+		    inset 0 0 0 1px hsla(0,0%,0%,.15);
+	color: #eee;
+	font-size: .8em;
+	line-height: 1.875;
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	text-shadow: 0 1px 1px hsla(0,0%,0%,.25);
+	text-transform: uppercase;
+}
+
+.icon:before {
+	background-image: -webkit-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,.15) 50%, transparent 50%);
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.quickly:after { 
+	content: 'Quickly';
+}
+
+.important:after {
+	content: 'Important';
+}
+
+.critical:after {
+	content: 'Critical';
+}
+
+.serious:after {
+	content: 'Serious';
+}
+
+.key:after {
+	content: 'Key';
+}
+
+.not_emergency:after {
+	content: 'Not emergency';
+}
+
+@media (min-width: 52.85em) {
+    header div {
+        width: 39em;
+    }
+}
+
+@media (min-width: 79.38em) {
+    header div {
+        width: 60em;
+    }
+}
+
+@media (min-width: 105.95em) {
+    header div {
+        width: 81em;
+    }
+}
