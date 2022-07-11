@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="assets/css/styles_2.css">
 	<link rel="icon" type="image/x-icon" href="assets/images/favicon.png">	
 </head>
+
 <body>
 	<header>
 		<div class="add__task">
@@ -21,7 +22,11 @@
 	
 	<h1>Task Manager</h1>
 	
-	<div class="content">
+	<div class="content" id='app'>
+
+		<!-- Tasks list -->
+		<script src="assets/js/content.js" defer><!-- ul>li>etc.. --></script>
+
 		<ul>
 			<li>
 				<i class="icon quickly"></i>
@@ -80,6 +85,12 @@
 			</li>
 		</ul>
 	</div>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function(){
+			createApp(document.getElementById('app'));
+		});
+	</script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
