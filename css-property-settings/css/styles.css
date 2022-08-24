@@ -1,0 +1,221 @@
+:root {
+	--teal-10: #e9f7f7;
+	--teal-20: #d1eded;
+	--teal-30: #abe0e0;
+	--teal-40: #76cbcc;
+	--teal-50: #29a1a3;
+	--teal-60: #1a8082;
+	--teal-70: #196263;
+	--teal-80: #174c4d;
+	--teal-90: #133838;
+	--teal-100: #0f2929;
+	--navy-10: #f2f5f8;
+	--navy-20: #e2e8ee;
+	--navy-30: #ced7e0;
+	--navy-40: #b1bdc9;
+	--navy-50: #8493a3;
+	--navy-60: #63768a;
+	--navy-70: #475b70;
+	--navy-80: #32475e;
+	--navy-90: #243547;
+	--navy-100: #192633;
+	--black: #101010;
+	--white: #fdfdfd;
+	--spacing-10: 0.5rem;
+	--spacing-20: 1rem;
+	--radius-0: 0;
+	--radius-sm: 0.125rem;
+	--radius-md: 0.25rem;
+	--radius-lg: 0.5rem;
+	--radius-pill: 999rem;
+	--font-size-root: 1em;
+	--font-family-sans: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+	--font-family-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+	--font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+	--font-family-base: var(--font-family-sans);
+	--radius-base: var(--radius-sm);
+	--color-primary-10: var(--teal-10);
+	--color-primary-20: var(--teal-20);
+	--color-primary-30: var(--teal-30);
+	--color-primary-40: var(--teal-40);
+	--color-primary-50: var(--teal-50);
+	--color-primary-60: var(--teal-60);
+	--color-primary-70: var(--teal-70);
+	--color-primary-80: var(--teal-80);
+	--color-primary-90: var(--teal-90);
+	--color-primary-100: var(--teal-100);
+}
+
+html {
+	font-size: var(--font-size-root);
+}
+
+body {
+	background-color: var(--color-body-bg);
+	color: var(--color-body-text);
+	font-family: var(--font-family-base);
+}
+
+main {
+	max-width: 32rem;
+	margin: 0 auto;
+}
+
+.control {
+	display: block;
+	margin-bottom: var(--spacing-20);
+}
+
+p {
+	--paragraph-font-family: var(--font-family-base);
+	font-family: var(--paragraph-font-family);
+	margin-bottom: var(--spacing-20);
+}
+
+p span {
+	display: block;
+	margin-bottom: 12px;
+}
+
+fieldset {
+	border-radius: var(--radius-base);
+}
+
+button {
+	--button-color: var(--color-primary);
+	padding: var(--spacing-10) var(--spacing-20);
+	border-radius: var(--radius-base);
+	border: 1px solid var(--button-color);
+	background-color: var(--button-color);
+	color: var(--color-body-bg);
+	font-family: var(--font-family-base);
+	line-height: 1.25;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+button:hover {
+	--button-color: var(--color-primary-dark);
+}
+
+button:active {
+	--button-color: var(--color-primary-darker);
+}
+
+.button-outline,
+.button-ghost {
+	color: var(--button-color);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	  body {
+	    --color-body-bg: var(--navy-100);
+	    --color-body-text: var(--white);
+	    --color-primary-lighter: var(--color-primary-20);
+	    --color-primary-light: var(--color-primary-30);
+	    --color-primary: var(--color-primary-40);
+	    --color-primary-dark: var(--color-primary-50);
+	    --color-primary-darker: var(--color-primary-60);
+	  }
+}
+
+.scheme-dark body {
+	--color-body-bg: var(--navy-100);
+	--color-body-text: var(--white);
+	--color-primary-lighter: var(--color-primary-20);
+	--color-primary-light: var(--color-primary-30);
+	--color-primary: var(--color-primary-40);
+	--color-primary-dark: var(--color-primary-50);
+	--color-primary-darker: var(--color-primary-60);
+}
+
+@media screen and (prefers-color-scheme: light) {
+	  body {
+	    --color-body-bg: var(--white);
+	    --color-body-text: var(--navy-90);
+	    --color-primary-lighter: var(--color-primary-40);
+	    --color-primary-light: var(--color-primary-50);
+	    --color-primary: var(--color-primary-60);
+	    --color-primary-dark: var(--color-primary-70);
+	    --color-primary-darker: var(--color-primary-80);
+	  }
+}
+
+.scheme-light body {
+	--color-body-bg: var(--white);
+	--color-body-text: var(--navy-90);
+	--color-primary-lighter: var(--color-primary-40);
+	--color-primary-light: var(--color-primary-50);
+	--color-primary: var(--color-primary-60);
+	--color-primary-dark: var(--color-primary-70);
+	--color-primary-darker: var(--color-primary-80);
+}
+
+@media screen and (prefers-color-scheme: light) {
+	.button-outline:hover,
+	.button-ghost:hover {
+		background-color: var(--color-primary-10);
+	}
+
+	.button-outline:active,
+	.button-ghost:active {
+		background-color: var(--color-primary-20);
+	}
+}
+
+.scheme-light .button-outline:hover,
+.scheme-light .button-ghost:hover {
+	background-color: var(--color-primary-10);
+}
+
+.scheme-light .button-outline:active,
+.scheme-light .button-ghost:active {
+	background-color: var(--color-primary-20);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	.button-outline:hover,
+	.button-ghost:hover {
+		--button-color: var(--color-primary);
+		background-color: var(--navy-90);
+	}
+
+	.button-outline:active,
+	.button-ghost:active {
+		--button-color: var(--color-primary-light);
+		background-color: var(--navy-80);
+	}
+}
+
+.scheme-dark .button-outline:hover,
+.scheme-dark .button-ghost:hover {
+	--button-color: var(--color-primary);
+	background-color: var(--navy-90);
+}
+
+.scheme-dark .button-outline:active,
+.scheme-dark .button-ghost:active {
+	--button-color: var(--color-primary-light);
+	background-color: var(--navy-80);
+}
+
+.button-outline {
+	background-color: var(--color-body-bg);
+}
+
+.button-ghost {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.sans {
+	font-family: var(--font-family-sans);
+}
+
+.serif {
+	font-family: var(--font-family-serif);
+}
+
+.mono {
+	font-family: var(--font-family-mono);
+}

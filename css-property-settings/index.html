@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>CSS Property Toggle</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<script src="vendor/vue.js"></script>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="icon" type="image/x-icon" href="images/favicon.png">	
+</head>
+<body>
+	<div id="app">
+		<main>
+			<h1>Настройки сайта</h1>
+			<fieldset class="control">
+				<legend>Гарнитура</legend>
+				<label class="sans">
+					<input type="radio" value="sans" v-model="fontFamily">
+					Sans serif
+				</label>
+				<label class="serif">
+					<input type="radio" value="serif" v-model="fontFamily">
+					Serif
+				</label>
+				<label class="mono">
+					<input type="radio" value="mono" v-model="fontFamily">
+					Monospace
+				</label>
+			</fieldset>
+			<label class="control">
+				Размер шрифта
+				<select v-model="fontSize">
+					<option value="12">12</option>
+					<option value="14">14</option>
+					<option value="16">16</option>
+					<option value="18">18</option>
+					<option value="20">20</option>
+					<option value="24">24</option>
+					<option value="32">32</option>
+				</select>
+			</label>
+			<fieldset class="control">
+				<legend>Тема</legend>
+				<label>
+					<input type="radio" value="light" v-model="colorScheme">
+					Светлая
+				</label>
+				<label>
+					<input type="radio" value="auto" v-model="colorScheme">
+					Оптимальная
+				</label>
+				<label>
+					<input type="radio" value="dark" v-model="colorScheme">
+					Темная
+				</label>
+			</fieldset>
+			<hr>
+			<p><span>Тестовый пример:</span>
+			- Ты где? Тебя уже второй день нет!<br> 
+			- Я ж на рыбалке.<br> 
+			- На рыбалке? Второй день подряд? Что, клёва нет?<br> 
+			- Ну почему нет? Тут клёво!
+			</p>
+			<button>Сохранить</button>
+			<button class="button-outline">Сохранить</button>
+			<button class="button-ghost">Сохранить</button>
+		</main>
+	</div>
+
+	<script src="app/app.js"></script>
+</body>
+</html>
